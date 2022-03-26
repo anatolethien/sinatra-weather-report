@@ -3,20 +3,66 @@
   <head>
     <meta charset="utf-8">
     <title>Weather report - What's the weather today?</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/cce24e5912.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
+    <header class="has-text-centered has-background-warning p-5 mb-5">
       <hgroup>
-        <h1>Weather report</h1>
-        <h2>What's the weather today?</h2>
+        <h1 class="title is-1">
+          <a href="/" class="has-text-dark">Weather report</a>
+        </h1>
+        <h2 class="subtitle is-3">
+          What's the weather today?
+        </h2>
       </hgroup>
     </header>
-    <main>
-      <form action="/weather-report" method="post">
-        <label for="search">Location</label>
-        <input type="text" name="search" autocomplete="off">
-        <button type="submit">Search</button>
+    <main class="p-5 my-5">
+      <form action="/weather-report" method="post" class="level-item field has-addons has-addons-centered p-5">
+        <div class="control">
+          <input type="text" name="search" autocomplete="off" class="input">
+        </div>
+        <div class="control">
+          <button type="submit" class="button is-warning">
+            <span class="icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+          </button>
+        </div>
       </form>
+      <figure class="image">
+        <img src="/img/<%= @image %>.svg" alt="Vacation" style="max-height: 25rem;">
+      </figure>
     </main>
+    <nav class="navbar is-warning p-5 mt-5">
+      <div class="navbar-start">
+        <div class="navbar-item">
+          <a href="https://anatolethien.eu" class="button is-warning">
+            <span class="icon is-large">
+                <i class="fa-solid fa-house"></i>
+            </span>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a href="https://github.com/anatolethien/sinatra-weather-report" class="button is-warning">
+            <span class="icon is-large">
+              <i class="fa-brands fa-github"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <ul>
+            <li>
+              Built by anatolethien with ❤️
+            </li>
+            <li>
+              Powered by Ruby, Sinatra and Bulma
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </body>
 </html>
