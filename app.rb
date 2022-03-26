@@ -2,6 +2,8 @@ require "sinatra"
 require_relative "parser.rb"
 
 get "/" do
+
+  @image = ["day", "night", "rain", "snow"].sample
   erb :index
 end
 
@@ -12,5 +14,7 @@ post "/weather-report" do
   @city = location[:city]
   @country = location[:country]
   @temperature = weather[:temperature]
+  @condition = weather[:condition]
+  @illustration = weather[:illustration]
   erb :weather
 end
